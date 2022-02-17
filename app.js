@@ -50,3 +50,48 @@ function double(arr) {
 }
 
 console.log(double([1, 2, 3]));
+
+//Big O of Objects
+// Insertion - O(1);
+// Removal - O(1);
+// Searching - O(N);
+// Access - O(N);
+
+let instructor = {
+  firstName: "kelly",
+  isInstructor: true,
+  favoriteNumbers: [1, 2, 3, 4],
+};
+
+// firstName      isInstructor    favoriteNumber
+
+// Big O of Object Methods
+// Object.keys = O(N)
+console.log(Object.keys(instructor));
+
+// Object.values = O(N)
+
+console.log(Object.values(instructor));
+
+// Object.entries = O(N)
+
+console.log(Object.entries(instructor));
+// hasOwnProperty = O(1)
+
+console.log(instructor.hasOwnProperty("isInstructor"));
+
+//Big O of Arrays
+//Ordered lists
+
+// Insertion - it Depends
+// Removal - it Depends
+// Searching - O(N)
+// Access - O(1)
+
+let names = ["Michael", "Melissa", "Andrea"];
+
+let values = [true, {}, [], 2, "awesome"];
+
+//the reason why push & pop is always faster than shift & unshift
+
+// 1. objects are fast at pretty much everything but there's no order
