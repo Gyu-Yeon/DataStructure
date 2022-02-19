@@ -95,3 +95,37 @@ let values = [true, {}, [], 2, "awesome"];
 //the reason why push & pop is always faster than shift & unshift
 
 // 1. objects are fast at pretty much everything but there's no order
+
+function validAnagram(str1, str2) {
+  //먼저 string의 길이가 다르면 return false
+  if (str1.length !== str2.length) {
+    return false;
+  }
+  let word1 = [...str1];
+  let word2 = [...str2];
+  let obj1 = {};
+
+  for (let w of word1) {
+    obj1[w] = (obj1[w] || 0) + 1;
+  }
+  console.log(obj1);
+  for (let i = 0; i < str1.length; i++) {
+    if (obj1[word2[i]] == 0 || obj1[word2[i]] == undefined) {
+      return false;
+    }
+    if (obj1[word2[i]] >= 1) {
+      obj1[word2[i]]--;
+      console.log(obj1);
+    }
+  }
+  // loop을 word1,2를 split 하여 object에 담을것.
+  // loop 을 통해 object[word2[i]] 가 1보다 크면 -- 1보다작으면 return false
+  // loop를 다돌고 나온다면 return true.
+
+  return true;
+}
+
+// console.log(validAnagram("aaz", "zza"));
+// console.log(validAnagram("anagram", "nagaram"));
+console.log(validAnagram("rat", "car"));
+console.log(validAnagram("rat", "cars"));
