@@ -47,7 +47,7 @@ Insertion - it depends
 - recursion.js 4의 countDown 함수를 보게되면, 파라미터 num이 0이 아닐시 계속해서 num의 숫자가 줄면서 countDown함수가 실행되는 것을 볼 수 있는데, 이때 이 함수가 무한히 반복되지 않게 하기 위한 안전장치 break point를 Base Case라고 한다. Base Case가 없는 recursive(반복적인) 함수는 Stack에 끝없이 Queue들을 쌓으며 에러를 출력하는데, 이때 이런 문제를 Stacks overflow라고 하며, 잘못된 Recursion 함수를 뜻한다. recursion.js 4의 Base case는 recursion.js 5의 if( num <= 0 ) 이다.
 - 또, Recursion은 파라미터의 변화를 충족시켜야 하는데, recursion.js 4의 countDown 함수는 num이라는 파라미터가 1씩 줄어들며, 그 줄어든 num이 다시 countDown 함수의 파라미터로 쓰이는 것을 볼 수 있다. 이런 과정을 몇 번 반복하다보면, 함수의 Base case에 도달하게 되며 원하는 값이 출력된다.
 - recursion.js 16의 sumRange 함수를 예로 들자면 recursion.js 17에 if(num === 1) 은 Base case 이므로, 이 함수의 파라미터 num이 1까지 줄어들어야 함수의 마지막 번째 Queue가 실행된다는 것을 알려준다. 예시로 sumRange(3)을 실행한다고 하면, Stack에는 첫번째 Queue로 num 인 3이 쌓인다. 그다음에 sumRange(2), sumRange(1)이 쌓이며, 3 + sumRange(2) + sumRange(1)이 Stack에 남게되고, sumRange(1)부터 실행되어, recursion.js 18의 1을 리턴 하며 sumRange(1)이 종료되다. 그리하여, 3 + sumRange(2) + 1 이 되고, 다음 Queue가 실행되어, 3 + 2 + 1의 식을 도출해내며 함수가 끝이난다. 
-
+<!--  2022.02.21 -->
 
 
 
