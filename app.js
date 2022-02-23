@@ -129,3 +129,56 @@ function validAnagram(str1, str2) {
 // console.log(validAnagram("anagram", "nagaram"));
 console.log(validAnagram("rat", "car"));
 console.log(validAnagram("rat", "cars"));
+
+function validAnagram2(first, second) {
+  if (first.length !== second.length) {
+    return false;
+  }
+
+  const lookup = {};
+
+  for (let i = 0; i < first.length; i++) {
+    let letter = first[i];
+    // if letter exists, increment, otherwise set to 1
+    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1); //key point!!!
+  }
+  console.log(lookup);
+
+  for (let i = 0; i < second.length; i++) {
+    let letter = second[i];
+    // can't find letter or letter is zero then it's not an anagram
+    if (!lookup[letter]) {
+      return false;
+    } else {
+      lookup[letter] -= 1;
+    }
+  }
+
+  return true;
+}
+
+// {a: 0, n: 0, g: 0, r: 0, m: 0,s:1}
+validAnagram2("anagrams", "nagaramm");
+
+function countUniqueValues(arr) {
+  //2개의 포인터 만들기
+  // counter를 만들어서 두 포인터가 다를 때 마다 +1
+  // 루프 안에서 포이터 2개 비교하기
+  if (arr.length < 1) {
+    return 0;
+  }
+  let counter = 0;
+  let p = 0;
+
+  while (p !== arr.length - 1) {
+    if (arr[p] - arr[p + 1] == 0) {
+      p++;
+    } else if (arr[p] - arr[p + 1] != 0) {
+      counter++;
+      p++;
+    }
+  }
+  return counter + 1;
+}
+
+console.log(countUniqueValues([]));
