@@ -29,3 +29,45 @@ function factorial(num) {
   }
   return num * factorial(num - 1);
 }
+
+function power(n, a) {
+  if (a == 0) {
+    return 1;
+  }
+  return n * power(n, a - 1);
+}
+
+function factorial(n) {
+  if (n == 0) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+function productOfArray(arr) {
+  if (arr.length === 0) {
+    return 1;
+  }
+  let num = arr.pop();
+  return num * productOfArray(arr);
+}
+
+function recursiveRange(n) {
+  if (n === 0) {
+    return 0;
+  }
+  return n + recursiveRange(n - 1);
+}
+
+function fib(n) {
+  if (n == 0) {
+    return 0;
+  }
+  if (n == 1) {
+    return 1;
+  }
+  if (n == 2) {
+    return 1;
+  }
+  return fib(n - 2) + fib(n - 1);
+}
