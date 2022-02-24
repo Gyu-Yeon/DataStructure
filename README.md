@@ -49,9 +49,14 @@ Insertion - it depends
 - recursion.js 16의 sumRange 함수를 예로 들자면 recursion.js 17에 if(num === 1) 은 Base case 이므로, 이 함수의 파라미터 num이 1까지 줄어들어야 함수의 마지막 번째 Queue가 실행된다는 것을 알려준다. 예시로 sumRange(3)을 실행한다고 하면, Stack에는 첫번째 Queue로 num 인 3이 쌓인다. 그다음에 sumRange(2), sumRange(1)이 쌓이며, 3 + sumRange(2) + sumRange(1)이 Stack에 남게되고, sumRange(1)부터 실행되어, recursion.js 18의 1을 리턴 하며 sumRange(1)이 종료되다. 그리하여, 3 + sumRange(2) + 1 이 되고, 다음 Queue가 실행되어, 3 + 2 + 1의 식을 도출해내며 함수가 끝이난다. 
 <!--  2022.02.21 -->
 
+## Search Algorithm
+- 검색 알고리즘은 이름 그대로 검색 문제를 해결하는 어떠한 알고리즘에 해당되며, Linear Search나 Binary Search를 사용하여, 일부 데이터 구조 안에 저장된 정보를 검색 하기 위해 사용된다.
+#### Linear Search
+- Linear Search는 검색 알고리즘 중 하나이다. 정렬되거나 정렬되지 않은 리스트가, 내가 찾는 값을 갖고 있는지 혹은, 갖고 있다면 그 값의 위치(index)는 어디인지를 쉽게 찾도록 도와준다. 예를들어, let arr = [-1,0,3,4,15]에서 숫자 4가 몇번째 있는지 알고 싶어 arr.indexOf(5)를 실행하였더니, 3이라는 숫자를 return하였다. 하지만 어떻게 이 3이라는 숫자를 return하였는지 알아보았다. 우선 arr의 첫번째 수 arr[0] = 4가 맞는지 부터 확인한다. 그렇게  arr[1], arr[2], arr[3], 까지 비교하여 true가 return되면 찾던 숫자의 인덱스를 return한다. 이런 방식은 arr의 길이가 길어질 수록 많은 시간이 걸리는 단점이 있다.만약 arr는 1부터 10000까지의 숫자를 나열한 집합체이고, 나는 9999의 위치(index)가 알고 싶어 arr.indexOf(9999)를 실행하면, 9998이라는 숫자를 return 하겠지만 이전 예시보다는 많은 시간이 걸릴 것이다. 그래서 찾고싶은 숫자가 속해있는 arr의 길이가 길어지면 길어질수록 그만큼 걸리는 시간도 늘어나기 때문에 Linear Search의 Time Complexity는  O(N)이다.
+#### Bianary Search 
+- Bianary Search는 또 다른 검색 알고리즘이다. 하지만 Linear Search와는 다르게 정렬된 리스트에만 사용할 수 있는 알고리즘이다. 이 알고리즘의 프로세스는 Time Complexity를 대폭 줄여주는데, search.js 16을 확인해보자. 우선 파라미터로 정렬된 숫자들의 리스트와 찾고 싶은 숫자를 정한다. 그 다음에 search.js 23,24,25,와 같이 left, right middle 이라는 인덱스 포인트를 설정한다. middle은 리스트의 가운데에 위치한 인덱스 포인트를 찾아 저장한 값이다. Math.floor( left + right) /2)으로 구할 수 있다. 그리고 left <= right를 break point로 갖는 while 반복문을 실행시킨다. while 반복문 안에서 arr[middle] 과 찾고 싶은 숫자인 val을 비교하여 두 숫자가 같으면 return middle을 하고 아닐 시 search.js 30, 33 과정으로 넘어간다. 이 과정에서, search.js 30 처럼 arr[middle] < val 이 true 이면, left = middle +1을 실행시킨다. 그 이유는 arr[middle]을 포함한 그 이전 인덱스 숫자들은 val보다 작기 때문에 비교해볼 필요가 없기 때문이다. 반대 과정도 마찬가지다. search.js 33처럼 arr[middle] > val이 true라면 right = middle -1을 실행시켜 arr[middle]보다 다음에 위치한 숫자들은 비교하지 않아도 된다. 위 과정을 반복하여 left <= right이 false가 될 때까지 실행 했음에도 middle이 return되지 않는 다면, search.js 38 처럼 while 반복문 바깥에 return -1을 하여 찾고자 하는 숫자가 리스트에 포함되어 있지 않음을 알려주면 된다. Binary Search 역시 Linear Search와 마찬가지로 리스트의 길이가 길어질수록 실행해야하는 프로세스가 늘어나기 때문에 Binart Search의 Time Complexity 또한 O(N)이라 착각할 수 있다. 하지만 Binary Search는 Linear Search처럼 리스트의 모든 수와 비교하지 않아도 되기 때문에 Linear Search에 비해 훨씬 빠른 Time Complexity를 갖는다. 그렇게 Binary Search는 O(logN)의 Time complexity로 나타낼 수 있는데 그 이유는, 리스트의 숫자가 2의 배수로 늘어날때 마다 한번의 프로세스가 늘어나기 때문이다. 예를 들어 arr.length가 16이라면 최대 4번에 걸쳐 원하는 답의 인덱스나 존재하지 않음을 찾아낼 수 있고, 리스트의 길이가 32이면 최대 5번에 걸쳐 위 작업을 해낼 수 있다. 그러므로 Binary Search는 O(logN)의 Time Complexity로 나타낸다.
 
-
-
+<!-- 2022.02.24 -->
 
 
 
