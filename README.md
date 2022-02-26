@@ -1,4 +1,4 @@
-# Data Structure Course 
+# Algorithm & Data Structure
 (app.js 참조)
 
 ## Big O Notation
