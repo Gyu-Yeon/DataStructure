@@ -9,7 +9,7 @@ function swap1(arr, idx1, idx2) {
   arr[idx1] = arr[idx1];
   arr[idx2] = temp;
 }
-// ES2015;
+// ES2015
 const swap2 = (arr, idx1, idx2) => {
   [arr[idx1], arr[idx2]] = [arr[(idx2, arr[idx1])]];
 };
