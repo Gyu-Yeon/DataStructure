@@ -8,16 +8,12 @@ const swap = (arr, idx1, idx2) => {
 function selectionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     let min = arr[i];
-
     for (j = i + 1; j < arr.length; j++) {
       if (min > arr[j]) {
         min = arr[j];
       }
-      //   console.log(min);
     }
-
     let num = arr.indexOf(min);
-
     if (num != i) {
       swap(arr, i, num);
       console.log(i, num);
