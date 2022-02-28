@@ -67,7 +67,10 @@ Insertion - it depends
 #### Selection Sort
 - 선택 정렬은 다음과 같은 순서로 이루어진다. 주어진 배열 중에 최소값을 찾는다. 그 값을 맨 앞에 위치한 값과 교체한다. 맨 처음 위치를 뺀 나머지 배열를 같은 방법으로 교체한다. 
 - selection sort는 bubble sort와 마찬가지로 nested loop, 반복문안에 또 다른 반복문이 실행된다. 외부 반복문은 0 부터 배열의 길이보다 작을때 까지 실행되고 내부 반복문은 첫번째 반복문 실행 파라미터+1 부터 배열의 길이보다 작을 때까지 실행된다. 그 이유는, 정렬을 위해 반복문이 돌고난 뒤 외부 반복문의 실행 파라미터에 해당하는 인덱스 숫자는 이미 정렬이 된 상태이기 때문에 더 이상 다른 수와 비교를 할 필요가 없기 때문이다. selection.js 12를 보게 되면 if( min > arr[j] )라는 조건문이 성립하면 min = arr[j]가 실행된다. 이 과정의 반복문이 끝나고 나면 min의 해당하는 인덱스를 찾아 외부 반복문의 해당 반복차례에 설정되었었던 min 숫자와 자리가 교환(SWAP)된다. 위 과정의 반복문이 모두 끝나는 시점에 selectionSort함수는 정렬된 배열를 return 한다.
-- Selection Sort의 Time Complexity는 Bubble Sort와 마찬가지로 외부 반복문과 내부 반복문 실행되는 nest loop를 포함하여 기본적으로 O(N^2)이다. 
+- Selection Sort의 Time Complexity는 Bubble Sort와 마찬가지로 외부 반복문과 내부 반복문 실행되는 nest loop를 포함하여 O(N^2)이다. 
+// 2022.02.27
 #### Insertion Sort
 - 삽입 정렬은 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘이다. k번째 반복 후의 결과 배열은, 앞쪽 k + 1 항목이 정렬된 상태이다.
-- insertion.js 8을 참고하면 외부 반복문이 실행되고 currentVal 이라는 변수에 arr[i]을 저장한다. 그리고 내부 반복문을 arr[j] > currentVal이 false 이거나 내부 반복문의 실행 파라미터인 j 가 0보다 크거나 같을때까지 실행한다. 그리고 insertion.js 12를 실행하여
+- insertion.js 8을 참고하면 외부 반복문이 실행되고 currentVal 이라는 변수에 arr[i]을 저장한다. 그리고 내부 반복문을 arr[j] > currentVal이 false 이거나 내부 반복문의 실행 파라미터인 j 가 0보다 크거나 같을때까지 실행한다. 그리고 만약 arr[j] > currentval이 true 이면  insertion.js 12를 실행하여 arr[j]의 위치가 currentVal 뒤에 위치하도록 자리 교환(Swap)을 실행한다. 그리고 arr[j] < currentVal이 true가 되는 순간이 currentVal의 위치이므로 내부 반복문이 끝이나고 insertion.js 14를 실행하여 currentVal을 해당 위치에 삽입한다. 위 과정을 반복하면 정렬된 arr를 return하게 된다. 
+- Insertion Sort의 Time Complexity역시 Bubble Sort와 Selection Sort와 마찬가지로 nest loop을 담고 있기 때문에 O(N^2)이다. 
+// 2022.02.28
