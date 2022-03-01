@@ -80,5 +80,5 @@ Insertion - it depends
 - 합병 정렬함수는 파라미터인 배열이 각각의 원소를 나누어 갖도록 계속해서 나누는 작업을 실행하기 위해 recursive한 함수를 실행하게 된다. merge.js 36을 참고하면 첫번째 break point는 파라미터인 arr의 길이가 1보다 작거나 같을 때 arr를 return하는 것이다. 만약 위 조건이 맞지 않는다면, arr의 중간을 찾아 slice 메서드를 활용하여 left 와 right로 나눈다. 그리고 나눈 두 변수를 다시 mergeSort를 실행하여 arr의 길이가 1이 될 때까지 실행한다. arr = [1,4,6,2] 로 예를 들면 merge.js 38 과 39는 left = mergeSort([ 1 , 4 ])가 되고 right = mergeSort([ 6, 2 ])가 된다. 그리고 아직 arr의 길이가 1이 아니므르 다시 위 과정이 반복되어, left = mergeSort([1]) right = mergeSort([4]), left = mergeSort([6]) right = mergeSort([2])가 된다. 이렇게 [1], [4], [6], [2] arr <= 1이 true를 return 하였음으로 더이상 mergeSort는 진행되지 않고, mergeSort 40의 merge 함수가 left와 right를 파라미터하여 실행된다. [1], [4] 가 합병되어 [1,4], [6], [2]가 합병되어 [2,6]
 그리고 [1.4] 와 [2,6]이 합병되어 정렬된 arr [1,2,4,6]을 return하며 함수가 종료된다.
 - 합병 정렬은 O(nlogn)의 Time Complexity 갖는데, 그 이유는 각각의 원소를 나누는 과정에서 배열의 길이가 아무리 커지더라도 2의 배수 만큼의 나누는 과정이 만들어지기 때문이다. 예를 들어, arr의 길이가 8이라고 한다면, 4,4, 2,2,2,2, 1,1,1,1,1,1,1,1 총 3번의 단계를 거친다. arr의 길이가 4라면 2,2, 1,1,1,1 이렇게 2단계, arr의 길이가 16이라면, 총 4단계에 걸쳐 recursion함수가 종료된다. 하지만 다시 정렬된 배열을 return하려면, O(N)만큼의 시간이 걸리는 merge함수를 실행해야 한다. merge함수는 3개의 while 반복문을 포함하여 O(3N)이라고 볼 수도 있지만, 결국 굉장히 큰 숫자의 관점에서 본다면 3은 의미가 없어지기 때문에 merge함수는 O(N)만큼의 시간이 걸린다. 따라서 배열을 나누는 과정만 놓고 본다면 O(logn)의 Time Complexity를 갖겠지만 O(N) 시간이 걸리는 merge함수도 실행해야 하므로 mergeSort는 O(nlogn)의 Time Complexity를 갖는다.
-- //2022.03.01
+//2022.03.01
 
