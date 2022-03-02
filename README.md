@@ -3,7 +3,7 @@
 
 ## Big O Notation
 - 두가지 코드중 더 좋은 코드를 고르라고 한다면, 코드가 '좋다'라는 의미는 어떤 것일까? 코드가 작동하는 속도의 빠름? 코드가 작동하는데 소요되는 메모리? 코드의 가독성? 
-결론은 코드가 작동하는 빠름(Time Complexity)과 소요되는 메모리(Space Complexity)라 답할 수 있다. 
+결론은 코드가 작동하는 속도를 나타내는 Time Complexity와 소요되는 메모리 Space Complexity라 답할 수 있다. 
 #### Time Complexity
 - performance.now() 함수를 사용하여 두가지 함수를 실행한 뒤, 어떤 함수가 더 빨리 작동하는지 알아보자. app.js 1에 적힌 함수와 app.js 12에 적힌 addupTo1과 2를 비교하였을때,
 1 은 Time Elasped: 1.0117000000029803 seconds. 소요됐고, 2는 Time Elasped: 0 seconds. 소요되었다고 나왔다. 하지만 매번 코드를 실행하고 이런 방법으로 더 좋은 코드를 찾아야 하기에는 
