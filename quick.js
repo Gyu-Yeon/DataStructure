@@ -21,7 +21,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {
   return counter;
 }
 
-let arr = [4, 6, 9, 1, 2, 5, 3];
+let arr = [10, 8, 6, 9, 1, 2, 5, 3];
 
 function quickSort(arr, left = 0, right = arr.length - 1) {
   if (left < right) {
