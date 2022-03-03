@@ -23,8 +23,8 @@
 ##### Big O of Objects 
 Insertion - O(1)
 <br> Removal - O(1)
-<br> Searching - O(N)
-<br> Access - O(N)
+<br> Searching - O(n)
+<br> Access - O(n)
 - 우선 Object에 key 와 value를 추가하는 작업은 O(1)의 시간이 소요된다. Key의 단어의 길이나 value가 아무리 길어도 추가하는 작업은 한번의 동작만을 행하기 때문에 O(1)의 시간만큼만 걸린다.
 - 제거를 할때도 추가와 마찬가지로 한번의 동작만을 수행하기 때문에 O(1) 시간이걸린다.
 - 하지만 해당 value가 Object에 존재하는지 알아보는 Searching 작업을 위해서는 Object의 길이가 해당 동작의 시간을 좌우하기 때문에 O(N) 시간이 걸린다.
@@ -32,19 +32,19 @@ Insertion - O(1)
 ##### Big O of Arrays 
 Insertion - it depends
 <br> Removal - it depends
-<br> Searching - O(N)
+<br> Searching - O(n)
 <br> Access - O(1)
-- Array에서의 추가 작업은 Array의 마지막에 추가하는 것과 Array의 처음에 추가하는 것으로 2가지로 분류된다. 우선 Array의 마지막에 추가하는 작업은 O(1)의 시간이 소요된다. 그 이유는 Array에 추가하려는 값의 크기나 길이가 아무리 길어도 그 작업은 한번만 행해지기 때문이다. 하지만, Array의 맨 앞에 추가를 한다고 하면 상황이 다르다. app.js 92 의 'names' Array의 맨 앞에 "John"을 추가한다고 가정해보자. 기존 'names'의 값들의 index는  "Michael"(0), "Melissa"(1), "Andrea"(2) 일 것이다. 하지만 "John"(0) "Michael"(1), "Melissa"(2), "Andrea"(3)이 추가 되면서 기존 값들에 새로운 index가 부여되었고 이러한 작업은 Array의 길이에 따라 소요되는 시간이 다를 것임으로 Array에서 Insertion은 O(N) 시간이 걸린다.
-- 제거하는 Removal 작업 역시 Insertion과 동일한 방식으로 동작함으로 Removal 역시 O(N) 시간이 소요된다.
-- Searching 작업은 Object의 Searching과 마찬가지로 Array의 길이에 따라 동작 시간이 커지거나 작아지므로 O(N) 시간이 걸린다.
+- Array에서의 추가 작업은 Array의 마지막에 추가하는 것과 Array의 처음에 추가하는 것, 2가지로 분류된다. 우선 Array의 마지막에 추가하는 작업은 O(1)의 시간이 소요된다. 그 이유는 Array에 추가하려는 값의 크기나 길이가 아무리 길어도 그 작업은 한번만 행해지기 때문이다. 하지만, Array의 맨 앞에 추가를 한다고 하면 상황이 다르다. app.js 92 의 'names' Array의 맨 앞에 "John"을 추가한다고 가정해보자. 기존 'names'의 값들의 index는  "Michael"(0), "Melissa"(1), "Andrea"(2) 일 것이다. 하지만 "John"(0) "Michael"(1), "Melissa"(2), "Andrea"(3)이 추가 되면서 기존 값들에 새로운 index가 부여되었고 이러한 작업은 Array의 길이에 따라 소요되는 시간이 다를 것임으로 Array에서 Insertion은 O(N) 시간이 걸린다.
+- 제거하는 Removal 작업 역시 Insertion과 동일한 방식으로 동작함으로 Array의 마지막 원소를 제거한다면 O(1), 하지만 Array의 맨 첫번째 원소를 제거한다면 Removal 역시 O(n) 시간이 소요된다.
+- Searching 작업은 Object의 Searching과 마찬가지로 Array의 길이에 따라 동작 시간이 커지거나 작아지므로 O(n) 시간이 걸린다.
 - 하지만 Array의 특정 값에 Access를 하는 것은 해당 값의 index가 필요하기 때문에 O(1) 시간이 걸린다. 그 이유는 Array.length 가 10000이라 할지라도 9000번째 값에 Access한다고 0~9000번의 모든 수를 훑고 지나가는 것이 아니기 때문이다.
 <!--  2022.02.17 -->
 
 ## Recursion 
-- 반복이라는 뜻으로 어떤 함수를 실행할 때 실행 과정에서 그 함수 자체가 다시 실행 되는 과정을 담은 함수. Recursion은 Base case(recursion 함수의 break point)와 파라미터의 변화 이 두가지를 모두 충족시켜야 한다. Recursion 함수를 이해하기 위해서는 Stacks & Queues를 먼저 이해해야 하기 때문에 Stack & Queues를 먼저 알아보자.
+- 반복이라는 뜻으로 어떤 함수를 실행할 때 실행 과정에서 그 함수 자체가 다시 실행되는 과정을 담은 함수. Recursion은 Base case(recursion 함수의 break point)와 파라미터의 변화 이 두가지를 모두 충족시켜야 한다. Recursion 함수를 이해하기 위해서는 Stacks & Queues를 먼저 이해해야 하기 때문에 Stack & Queues를 먼저 알아보자.
 #### Stacks & Queues
 - Javascript는, 처음 파일을 실행시키면, 맨 윗줄부터 한줄 한줄 읽으면서 실행한다. 실행한 한줄 한줄을 Stack이라는 저장 공간에 넣으며 순서대로 쌓는데, 그렇게 쌓인 것들을 Queue라고 부른다. 이렇게 쌓인 Queue들이 실행될 때에는 Stack에 먼저 쌓인순서가 아닌, 가장 나중에 쌓인 순으로 실행된 후 Stack에서 빠져나간다. 예를 들자면, 책상위에 종이를 한장씩 쌓는다고 한다면, 맨 아래 있는 종이가 1번이 되는 것이 아니라, 맨 위에 쌓여있는 종이가 1번이 된다는 뜻이다. 
-- recursion.js 4의 countDown 함수를 보게되면, 파라미터 num이 0이 아닐시 계속해서 num의 숫자가 줄면서 countDown함수가 실행되는 것을 볼 수 있는데, 이때 이 함수가 무한히 반복되지 않게 하기 위한 안전장치 break point를 Base Case라고 한다. Base Case가 없는 recursive(반복적인) 함수는 Stack에 끝없이 Queue들을 쌓으며 에러를 출력하는데, 이때 이런 문제를 Stacks overflow라고 하며, 잘못된 Recursion 함수를 뜻한다. recursion.js 4의 Base case는 recursion.js 5의 if( num <= 0 ) 이다.
+- recursion.js 4의 countDown 함수를 보게되면, 파라미터 num이 0이 아닐시 계속해서 num의 숫자가 줄면서 countDown함수가 실행되는 것을 볼 수 있는데, 이때 이 함수가 무한히 반복되지 않게 하기 위한 안전장치를 설정하는데, 그 안전장치를 break point, 또는 Base Case라고 한다. Base Case가 없는 recursive(반복적인) 함수는 Stack에 끝없이 Queue들을 쌓으며 에러를 출력하는데, 이때 이런 문제를 Stacks overflow라고 하며, 잘못된 Recursion 함수를 뜻한다. recursion.js 4의 Base case는 recursion.js 5의 if( num <= 0 ) 이다.
 - 또, Recursion은 파라미터의 변화를 충족시켜야 하는데, recursion.js 4의 countDown 함수는 num이라는 파라미터가 1씩 줄어들며, 그 줄어든 num이 다시 countDown 함수의 파라미터로 쓰이는 것을 볼 수 있다. 이런 과정을 몇 번 반복하다보면, 함수의 Base case에 도달하게 되며 원하는 값이 출력된다.
 - recursion.js 16의 sumRange 함수를 예로 들자면 recursion.js 17에 if(num === 1) 은 Base case 이므로, 이 함수의 파라미터 num이 1까지 줄어들어야 함수의 마지막 번째 Queue가 실행된다는 것을 알려준다. 예시로 sumRange(3)을 실행한다고 하면, Stack에는 첫번째 Queue로 num 인 3이 쌓인다. 그다음에 sumRange(2), sumRange(1)이 쌓이며, 3 + sumRange(2) + sumRange(1)이 Stack에 남게되고, sumRange(1)부터 실행되어, recursion.js 18의 1을 리턴 하며 sumRange(1)이 종료되다. 그리하여, 3 + sumRange(2) + 1 이 되고, 다음 Queue가 실행되어, 3 + 2 + 1의 식을 도출해내며 함수가 끝이난다. 
 <!--  2022.02.21 -->
