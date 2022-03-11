@@ -93,3 +93,5 @@ Insertion - it depends
 - 위 3가지 도움 함수를 토대로 실행되는 radixSort는 우선 mostDigits함수를 실행해 배열의 가장 큰 숫자의 자리수를 찾아낸다. 그리고 radix.js 20처럼 반복문을 실행하여 digitBuckets 라는 배열을 0부터 9까지 해당하는 버킷을 만든다. 이 버킷은 [[마지막 자리 숫자가 0], [마지막 자리 숫자가 1], ...[마지막 자리 숫자가 9]] 이러한 배열로 만들어져 getDigit 함수를 실행해 각 배열에 해당하는 숫자들을 담는다. 해당 과정을 배열 중 가장 큰 수의 자리수 만큼 반복하고 radix.js 26처럼 coccat함수를 사용하여 arr를 return하면 모든 수가 비교없이 정렬된 것을 볼 수 있다.
 - Radix Sort의 Time Complexity는 O(nk)이다. 다른 정렬 알고리즘과는 조금 다른데, 그 이유는 가장 큰 숫자의 자리수가 만큼 반복문이 실행되기 때문이다. 배열의 길이가 길어지면 실행되는 횟수가 많아지기 때문에 O(n)의 Time Complexity를 갖고, 그 배열 중 가장 큰 숫자의 자리수만큼 반복되는 반복문이 하나 더 생성되어 O(nk)의 Time Complexity를 갖는다.
 //2022.03.03
+
+## Singly Linked List 
