@@ -94,4 +94,8 @@ Insertion - it depends
 - Radix Sort의 Time Complexity는 O(nk)이다. 다른 정렬 알고리즘과는 조금 다른데, 그 이유는 가장 큰 숫자의 자리수가 만큼 반복문이 실행되기 때문이다. 배열의 길이가 길어지면 실행되는 횟수가 많아지기 때문에 O(n)의 Time Complexity를 갖고, 그 배열 중 가장 큰 숫자의 자리수만큼 반복되는 반복문이 하나 더 생성되어 O(nk)의 Time Complexity를 갖는다.
 //2022.03.03
 
-# Data Structure
+## Data Structure
+- 자료구조는 컴퓨터 과학에서 효율적인 접근 및 수정을 가능케 하는 자료의 조직, 관리, 저장을 의미한다. 더 정확히 말해, 자료 구조는 데이터 값의 모임, 또 데이터 간의 관계, 그리고 데이터에 적용할 수 있는 함수나 명령을 의미한다. 
+#### Singly Linked List
+- 한 방향 연결 리스트라고 불리며, Node라는 실제 값을 위한 data 정보 (보통 key 값을 저장)와 인접 노드로 향하는 link 정보로 구성된 객체들의 모음이다. 이 연결 리스트는 한 방향으로만 흐른다는 특징이 있는데, 리스트의 첫번째 부분을 head라고 부르고 마지막 부분을 tail이라고 칭한다. head의 다음 부분에 접근하고 싶다면, head.next를 시작으로 모든 node에 접근할 수 있다. tail은 리스트의 마지막 이기때문에, tail.next를 한다면 null, 즉 비어있는 이라는 뜻의 null을 return한다. 그래서 head.next를 시작으로 .next로 다음 값에 접근했을 때, null이 출력되면 해당 값은 리스트의 tail이 된다.
+- Singly Linked List는 배열이 주 비교 대상인데, 그 이유는 access(접근)와, insert(삽입)에서의 차이가 있기 때문이다. 우선 배열은 index라고 하는 각 데이터들에 해당하는 값이 있어, index를 알고 있다면 그 인덱스에 해당하는 값에 바로 접근을 할 수 있기 때문에 O(1)의 Time Colpexity를 갖는 반면,  SLL(Singly Linked List)는 index가 없기 때문에 어느 번째에 위치한 값을 찾으려면 O(N)의 Time Complexity가 소요된다. insert(삽입)시에는 반대로 배열은 최악의 경우인 배열 맨 앞쪽에 새로운 값을 추가하게 된다면, 새로운 값을 위해 나머지 값들의 index가 모두 수정되어야하므로, O(N)의 Time Complexity를 갖지만, SSL은 원하는 위치에 insert하는 과정만 필요하기 때문에 O(1)의 Time Compexity를 갖는다는 차이점이 있다.
