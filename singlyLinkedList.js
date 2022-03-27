@@ -129,7 +129,7 @@ class SinglyLinkedList {
       prev = node;
       node = after;
     }
-    return this;
+    return this;  
   }
 }
 
