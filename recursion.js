@@ -113,4 +113,9 @@ function someRecursive(arr) {
 
 // console.log(someRecursive([2, 2, 3, 4]));
 
-function flatten(arr) {}
+function flatten(arr) {
+  Array.isArray(arr[0])
+  if( arr.length == 0){
+    return 
+  }
+}

@@ -12,5 +12,16 @@ class DoublyLinkedList {
     this.tail = null;
     this.length = 0;
   }
-  push()
+  push(val) {
+    // if no node exist new node == head and tail
+    // head.next = new node.
+    //
+
+    if (this.length == 0) {
+      let newNode = new Node(val);
+    }
+    let newNode = new Node(val);
+    this.head.next = newNode;
+    newNode.prev = this.head;
+  }
 }
