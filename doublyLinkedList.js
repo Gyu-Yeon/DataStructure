@@ -13,15 +13,33 @@ class DoublyLinkedList {
     this.length = 0;
   }
   push(val) {
-    // if no node exist new node == head and tail
-    // head.next = new node.
-    //
-
-    if (this.length == 0) {
-      let newNode = new Node(val);
-    }
     let newNode = new Node(val);
-    this.head.next = newNode;
-    newNode.prev = this.head;
+    if (this.length == 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      newNode.prev = this.tail;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+  pop() {
+    if (this.length == 0) {
+      return undefined;
+    } else if (this.length == 1) {
+      let temp = this.head.val;
+      this.head.next = null;
+      this.head = null;
+      this.tail = null;
+      this.length--;
+      return temp;
+    } else {
+      let temp = this.tail;
+      this.tail.next = null;
+      this.length--;
+      return temp;
+    }
   }
 }
