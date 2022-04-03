@@ -101,3 +101,4 @@ Insertion - it depends
 - Singly Linked List는 배열이 주 비교 대상인데, 그 이유는 access(접근)와, insert(삽입)에서의 차이가 있기 때문이다. 우선 배열은 index라고 하는 각 데이터들에 해당하는 값이 있어, index를 알고 있다면 그 인덱스에 해당하는 값에 바로 접근을 할 수 있기 때문에 O(1)의 Time Colpexity를 갖는 반면,  SLL(Singly Linked List)는 index가 없기 때문에 어느 번째에 위치한 값을 찾으려면 O(N)의 Time Complexity가 소요된다. insert(삽입)시에는 반대로 배열은 최악의 경우인 배열 맨 앞쪽에 새로운 값을 추가하게 된다면, 새로운 값을 위해 나머지 값들의 index가 모두 수정되어야하므로, O(N)의 Time Complexity를 갖지만, SSL은 원하는 위치에 insert하는 과정만 필요하기 때문에 O(1)의 Time Compexity를 갖는다는 차이점이 있다.
 <!--2022.03.15  -->
 #### Doubly Linked List 
+- 양 방향 연결 리스트라고 불리며, 한 방향 연결 리스트와 비숫한 구조를 갖고 있지만, 한 방향으로만 흐르는 Singly Linked List와는 다르게 Node의 값에 양 방향에서 접근을 할 수 있는 구조이다.
