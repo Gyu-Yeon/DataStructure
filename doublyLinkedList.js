@@ -66,4 +66,5 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+  get(val) {}
 }
