@@ -94,6 +94,13 @@ class DoublyLinkedList {
     }
     return false;
   }
+  insert(index, val) {
+    if (index > this.length || index < 0) return false;
+    if (index == 0) {
+      this.unshift(val);
+    } else if (index == 0) {
+    }
+  }
 }
 let list = new DoublyLinkedList();
 list.push(1);
