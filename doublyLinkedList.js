@@ -98,7 +98,18 @@ class DoublyLinkedList {
     if (index > this.length || index < 0) return false;
     if (index == 0) {
       this.unshift(val);
-    } else if (index == 0) {
+    } else if (index == this.length - 1) {
+      this.push(val);
+    } else {
+      let newNode = new Node(val);
+      let foundNode = this.get(index);
+      let prevNode = foundNode.prev;
+      prevNode.next = newNode;
+      newNode.prev = prevNode;
+      newNode.next = foundNode;
+      foundNode.prev = newNode;
+      this.length++;
+      return true;
     }
   }
 }
