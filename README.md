@@ -141,4 +141,5 @@ Insertion - it depends
 
 #### Doubly Linked List
 
-- 양 방향 연결 리스트라고 불리며, 한 방향 연결 리스트와 비숫한 구조를 갖고 있지만, 한 방향으로만 흐르는 Singly Linked List와는 다르게 Node의 값에 양 방향에서 접근을 할 수 있는 구조이다. Singly Linked Listd처럼 리스트의 첫번째 부분을 head라고 부르고 마지막 부분을 tail이라고 칭한다. 그리고 head를 제외한 모든 node에는 .prev로 이전 값에 접근할 수 있다.
+- 양 방향 연결 리스트라고 불리며, 한 방향 연결 리스트와 비슷한 구조를 갖고 있지만, 한 방향으로만 흐르는 Singly Linked List와는 다르게 Node의 값에 양 방향에서 접근을 할 수 있는 구조이다. Singly Linked List처럼 리스트의 첫번째 부분을 head라고 부르고 마지막 부분을 tail이라고 칭한다. 그리고 head를 제외한 모든 node에는 .prev로 이전 값에 접근할 수 있다. head.prev의 값은 언제나 null 이다.
+- Singly Linked List와 마찬가지로 insert(삽입)와 remove(제거)에서는 O(1)의 Time Complexity를 갖는다. Search에서도 Singly Linked List와 마찬가지로 O(N)의 Time Complexity를 갖는다. 하지만, SLL(Singly Linked List)과는 다르게 찾고 있는 값에 양방향에서 접근할 수 있어 실제 DLL(Doubly Linked List)의 Time Complexity는 O(N/2)이다. 길이가 10인 리스트에서 9번째 값을 찾는다고 할 때, tail.prev를 하여 바로 9번째 값을 찾아낼 수 있는 것이 그 이유이다. 하지만 O(N/2)는 O(N)와 마찬가지이기 때문에 DLL의 Time Complexity 또한 O(N)이라 할 수 있는 것이다.

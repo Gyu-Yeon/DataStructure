@@ -12,6 +12,7 @@ class DoublyLinkedList {
     this.tail = null;
     this.length = 0;
   }
+
   push(val) {
     let newNode = new Node(val);
     if (this.length == 0) {
@@ -25,6 +26,7 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
   pop() {
     if (!this.head) return undefined;
     var poppedNode = this.tail;
@@ -39,6 +41,7 @@ class DoublyLinkedList {
     this.length--;
     return poppedNode;
   }
+
   shift() {
     if (this.length == 0) return undefined;
     let oldHead = this.head;
@@ -53,6 +56,7 @@ class DoublyLinkedList {
     this.length--;
     return oldHead;
   }
+
   unshift(val) {
     let newNode = new Node(val);
     if (!this.head) {
@@ -66,6 +70,7 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
   get(index) {
     if (index < 0 || index >= this.length) return null;
     if (index <= this.length / 2) {
@@ -86,6 +91,7 @@ class DoublyLinkedList {
       return current;
     }
   }
+
   set(index, val) {
     let foundNode = this.get(index);
     if (foundNode != null) {
@@ -94,6 +100,7 @@ class DoublyLinkedList {
     }
     return false;
   }
+
   insert(index, val) {
     if (index > this.length || index < 0) return false;
     if (index == 0) {
@@ -110,6 +117,25 @@ class DoublyLinkedList {
       foundNode.prev = newNode;
       this.length++;
       return true;
+    }
+  }
+
+  remove(index) {
+    if (index >= this.length || index < 0) return undefined;
+    if (index === 0) {
+      return this.shift();
+    } else if (index == this.length - 1) {
+      return this.pop();
+    } else {
+      let foundNode = this.get(index);
+      let prevNode = foundNode.prev;
+      let nextNode = foundNode.next;
+      prevNode.next = nextNode;
+      nextNode.prev = prevNode;
+      foundNode.prev = null;
+      foundNode.next = null;
+      this.length--;
+      return foundNode;
     }
   }
 }
