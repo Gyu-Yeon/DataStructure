@@ -133,13 +133,13 @@ Insertion - it depends
 
 - 자료구조는 컴퓨터 과학에서 효율적인 접근 및 수정을 가능케 하는 자료의 조직, 관리, 저장을 의미한다. 더 정확히 말해, 자료 구조는 데이터 값의 모임, 또 데이터 간의 관계, 그리고 데이터에 적용할 수 있는 함수나 명령을 의미한다.
 
-#### Singly Linked List
+#### Singly Linked List(SLL)
 
 - 한 방향 연결 리스트라고 불리며, Node라는 실제 값을 위한 data 정보 (보통 key 값을 저장)와 인접 노드로 향하는 link 정보로 구성된 객체들의 모음이다. 이 연결 리스트는 한 방향으로만 흐른다는 특징이 있는데, 리스트의 첫번째 부분을 head라고 부르고 마지막 부분을 tail이라고 칭한다. head의 다음 부분에 접근하고 싶다면, head.next를 시작으로 모든 node에 접근할 수 있다. tail은 리스트의 마지막 이기때문에, tail.next를 한다면 null, 즉 비어있는 이라는 뜻의 null을 return한다. 그래서 head.next를 시작으로 .next로 다음 값에 접근했을 때, null이 출력되면 해당 값은 리스트의 tail이 된다.
 - Singly Linked List는 배열이 주 비교 대상인데, 그 이유는 access(접근)와, insert(삽입)에서의 차이가 있기 때문이다. 우선 배열은 index라고 하는 각 데이터들에 해당하는 값이 있어, index를 알고 있다면 그 인덱스에 해당하는 값에 바로 접근을 할 수 있기 때문에 O(1)의 Time Colpexity를 갖는 반면, SLL(Singly Linked List)는 index가 없기 때문에 어느 번째에 위치한 값을 찾으려면 O(N)의 Time Complexity가 소요된다. insert(삽입)시에는 반대로 배열은 최악의 경우인 배열 맨 앞쪽에 새로운 값을 추가하게 된다면, 새로운 값을 위해 나머지 값들의 index가 모두 수정되어야하므로, O(N)의 Time Complexity를 갖지만, SSL은 원하는 위치에 insert하는 과정만 필요하기 때문에 O(1)의 Time Compexity를 갖는다는 차이점이 있다.
 <!--2022.03.15  -->
 
-#### Doubly Linked List
+#### Doubly Linked List(DLL)
 
 - 양 방향 연결 리스트라고 불리며, 한 방향 연결 리스트와 비슷한 구조를 갖고 있지만, 한 방향으로만 흐르는 Singly Linked List와는 다르게 Node의 값에 양 방향에서 접근을 할 수 있는 구조이다. Singly Linked List처럼 리스트의 첫번째 부분을 head라고 부르고 마지막 부분을 tail이라고 칭한다. 그리고 head를 제외한 모든 node에는 .prev로 이전 값에 접근할 수 있다. head.prev의 값은 언제나 null 이다.
 - Singly Linked List와 마찬가지로 insert(삽입)와 remove(제거)에서는 O(1)의 Time Complexity를 갖는다. Search에서도 Singly Linked List와 마찬가지로 O(N)의 Time Complexity를 갖는다. 하지만, SLL(Singly Linked List)과는 다르게 찾고 있는 값에 양방향에서 접근할 수 있어 실제 DLL(Doubly Linked List)의 Time Complexity는 O(N/2)이다. 길이가 10인 리스트에서 9번째 값을 찾는다고 할 때, tail.prev를 하여 바로 9번째 값을 찾아낼 수 있는 것이 그 이유이다. 하지만 O(N/2)는 O(N)와 마찬가지이기 때문에 DLL의 Time Complexity 또한 O(N)이라 할 수 있는 것이다.
