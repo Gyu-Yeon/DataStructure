@@ -146,4 +146,4 @@ Insertion - it depends
 
 #### Stacks & Queues
 
-- Stack 과 Queue는 모두 추상적인 자료 구조이다. 그 중 Stack은 LIFO(Last In Fisrt Out)에 의거  한다. 가장 마지막에 Stack에 쌓인 정보가 가장 처음 반환되어 나오는 것은, Recursion 함수를 예시로 확인할 수 있다. Queue는 FIFO(First In First Out)에 의거한다.가장 처음 들어간 내용이 가장 먼저 나오는 구조이다. 
+- Stack 과 Queue는 모두 추상적인 자료 구조이다. 그 중 Stack은 LIFO(Last In Fisrt Out)에 의거한다. 가장 마지막에 Stack에 쌓인 정보가 가장 처음 반환되어 나오는 것은, Recursion 함수를 예시로 확인할 수 있다. Queue는 FIFO(First In First Out)에 의거한다.가장 처음 들어간 내용이 가장 먼저 나오는 구조이다.
