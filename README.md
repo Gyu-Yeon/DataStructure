@@ -146,3 +146,7 @@ Insertion - it depends
 #### Stacks & Queues
 
 - Stack 과 Queue는 모두 추상적인 자료 구조이다. 그 중 Stack은 LIFO(Last In Fisrt Out)에 의거한다. 가장 마지막에 Stack에 쌓인 정보가 가장 처음 반환되어 나오는 것은, Recursion 함수를 예시로 확인할 수 있다. Queue는 FIFO(First In First Out)에 의거한다.가장 처음 들어간 내용이 가장 먼저 나오는 구조이다.
+
+#### Binary tree
+
+-한 노드의 자식 노드가 최대 2개(왼쪽, 오른쪽)인 자료구조로, 이진 탐색 트리(binary search tree) 및 힙(heap) 등을 구현하기 위해 사용된다. 이진 트리에서의 방향 간선, 루트 노드, 단말 노드, 각 노드의 깊이, 레벨, 트리의 높이, 노드의 차수 등에 대한 정의는 일반적인 트리에 대한 용어 정의와 동일하다. 하지만 이진 트리는 뿌리 노드를 중심으로 2개의 부-트리(sub tree)로 나뉘어지며, 나뉘어진 2개의 부-트리도 모두 이진 트리여야 한다는 조건을 만족해야 한다.
