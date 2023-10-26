@@ -67,10 +67,6 @@ class BinarySearchTree {
   }
 }
 
-//      10
-//   5     13
-// 2  7  11  16
-
 var tree = new BinarySearchTree();
 tree.insert(10);
 tree.insert(5);
